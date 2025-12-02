@@ -19,7 +19,6 @@ public class UserService {
   public UserDto createUser(UserDto userDto) {
     User user = userMapper.toEntity(userDto);
     User savedUser = userRepository.save(user);
-    log.info("User created successfully: {}", savedUser);
     return userMapper.toDto(savedUser);
   }
 
@@ -47,6 +46,5 @@ public class UserService {
     User user = userRepository.findById(id)
         .orElseThrow(() -> new RuntimeException("User not found with ID: " + id));
     userRepository.delete(user);
-    log.info("User deleted successfully: {}", user);
   }
 }
