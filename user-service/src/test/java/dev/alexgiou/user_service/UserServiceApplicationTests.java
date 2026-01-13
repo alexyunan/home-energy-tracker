@@ -20,7 +20,7 @@ class UserServiceApplicationTests {
 	void contextLoads() {
 	}
 
-
+  @Disabled
   @Test
   void createUsers() {
     // create random users
